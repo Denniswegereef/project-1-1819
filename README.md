@@ -1,9 +1,27 @@
-# Project 1 @cmda-minor-web · 2018-2019
+# Take a deep dive in the OBA libary
 
-## Zoek in de de collectie van de OBA
+### Concept
 
-Het project vindt plaats bij de Centrale OBA. Maandagochtend is om 10.00 uur de kickoff, vrijdag zijn de presentaties van de resultaten. In een week bouwt iedere student een eigen prototype dat bezoekers kan helpen om items uit de OBA collectie te vinden. Technieken geleerd bij [CSS to the Rescue](https://github.com/cmda-minor-web/css-to-the-rescue-1819) en [Web App from Scratch](https://github.com/cmda-minor-web/web-app-from-scratch-1819) worden toegepast bij het bouwen van de de prototypes.
+Take a deep dive in the OBA libary, to choose a book to start from. And slowly progressing based on certain keys (for example author, genre, age, publishyear, city) to find a matching book for it.
 
-We verzamelen maandagochtend om 09.45 op de 1e verdieping van de Centrale OBA, [Oosterdokskade 143](https://www.google.com/maps/place/OBA+library+of+Amsterdam/@52.3756983,4.9082087,15z/data=!4m2!3m1!1s0x0:0x6b97f693e6ecb494?ved=2ahUKEwioo6OrzubgAhWLNOwKHR6KDQgQ_BIwCnoECAYQCA).
+Than it shows 3 different suggestions based on different parameters with a certain random. Where you can choose there a book from and let you explore the whole OBA libary
 
+Main goals:
 
+- Discover how many items have a relation with each other.
+- Just to have fun and explore how many items are there
+
+### Features
+
+- Repeatable structure
+- Color scheme (styling) changes when going down into the sea
+- Start with finding a book to start your journey with
+- 3 (?) options based on random parameters of the chosen book (possible with a % how big the factor is to choose a certain parameter)
+- Show used parameters?
+- Possible never ending
+- Check if parameter doesn't show the same book again (for example when the author only has one book, and you start the search for it and it also used the author it doesn't use the same book)
+- Detail page or hover for the book
+- Repeat the dive button
+- History mode?
+- Fancy animations pls
+-
