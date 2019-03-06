@@ -1,0 +1,41 @@
+// Source serif
+
+@font-face {
+  font-family: 'Source serif pro';
+  src: url(../fonts/Source_Serif_Pro/SourceSerifPro-Bold.ttf) format('ttf');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Source serif pro';
+  src: url(../fonts/Source_Serif_Pro/SourceSerifPro-Regular.ttf) format('ttf');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Source serif pro';
+  src: url(../fonts/Source_Serif_Pro/SourceSerifPro-Semibold.ttf) format('ttf');
+  font-weight: 400;
+}
+
+// Avenir
+
+@font-face {
+  font-family: 'Avenir';
+  src: url(../fonts/avenir_ff/AvenirLTStd-Black.ttf) format('ttf');
+  font-weight: 600;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url(../fonts/avenir_ff/AvenirLTStd-Regular.ttf) format('ttf');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'Avenir';
+  src: url(../fonts/avenir_ff/AvenirLTStd-Semibold.ttf) format('ttf');
+  font-weight: 400;
+}

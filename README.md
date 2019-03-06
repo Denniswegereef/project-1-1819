@@ -24,4 +24,3 @@ Main goals:
 - Repeat the dive button
 - History mode?
 - Fancy animations pls
--

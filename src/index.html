@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Oba</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="js/app.js" type="module"></script>
+    <!-- <script src="js/vdom.js" type="module"></script> -->
+  </head>
+  <body>
+    <header class="header-top">
+      <h1>Neem een duik in de <span>OBA bibliotheek</span></h1>
+    </header>
 
+    <main>
+      <section class="intro" id="hero">
+        <input
+          type="text"
+          name="s"
+          value=""
+          placeholder="Zoeken"
+          id="searchInput"
+        />
+
+        <div class="intro-suggestions">
+          <ul id="auto-suggestions-box"></ul>
+        </div>
+      </section>
+
+      <section class="waves"></section>
+
+      <section class="recco" id="1">
+        <header class="recco-header">
+          <h3>
+            Drie aansluitende items
+          </h3>
+          <h4>Kies een item om nog dieper te gaan</h4>
+        </header>
+
+        <div class="recco-books">
+          <article class="recco-item">
+            <img
+              src="https://v19.nbc.bibliotheek.nl/thumbnail?uri=http://data.bibliotheek.nl/ggc/ppn/418840660&token=c1322402"
+              alt=""
+            />
+
+            <h3>Fantasy</h3>
+            <h3>Harry potter</h3>
+
+            <a href="#">Bekijk boek</a>
+          </article>
+          <article class="recco-item">
+            <img
+              src="https://v19.nbc.bibliotheek.nl/thumbnail?uri=http://data.bibliotheek.nl/ggc/ppn/418840660&token=c1322402"
+              alt=""
+            />
+
+            <h3>Fantasy</h3>
+            <h3>Harry potter</h3>
+
+            <a href="#">Bekijk boek</a>
+          </article>
+          <article class="recco-item">
+            <img
+              src="https://v19.nbc.bibliotheek.nl/thumbnail?uri=http://data.bibliotheek.nl/ggc/ppn/418840660&token=c1322402"
+              alt=""
+            />
+
+            <h3>Fantasy</h3>
+            <h3>Harry potter</h3>
+
+            <a href="#">Bekijk boek</a>
+          </article>
+
+          <div class="line"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

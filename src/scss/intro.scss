@@ -1,0 +1,42 @@
+$autobox: 40rem;
+
+.intro {
+  background-color: lightgrey;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &-suggestions {
+    position: absolute;
+    top: calc(50% + 1rem);
+    left: calc(50% - #{$autobox / 2});
+    min-height: 0rem;
+    max-width: $autobox;
+    width: 100%;
+    li {
+      padding: 3px 1rem;
+      background-color: #fff;
+      border-bottom: 1px solid grey;
+      cursor: pointer;
+      &:hover {
+        background-color: grey;
+      }
+    }
+
+    h5 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.hero {
+  display: flex;
+}
+
+.waves {
+  min-height: 20vh;
+  background-color: red;
+  width: 100%;
+}

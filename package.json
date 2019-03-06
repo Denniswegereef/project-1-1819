@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "### Concept",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Denniswegereef/project-1-1819.git"
@@ -15,5 +12,37 @@
   "bugs": {
     "url": "https://github.com/Denniswegereef/project-1-1819/issues"
   },
-  "homepage": "https://github.com/Denniswegereef/project-1-1819#readme"
+  "homepage": "https://github.com/Denniswegereef/project-1-1819#readme",
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "ngrok": "^3.1.1",
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.10",
+    "prettier": "^1.16.4",
+    "xo": "^0.24.0"
+  },
+  "scripts": {
+    "format": "prettier --write \"src/**/*.js\"",
+    "xo": "xo",
+    "sass": "node_modules/.bin/node-sass --include-path scss src/scss/_main.scss src/css/main.css",
+    "sass-watch": "node_modules/.bin/nodemon -e scss -x npm run sass",
+    "server": "node_modules/.bin/live-server .",
+    "watch": "npm run sass-watch & npm run server",
+    "ngrok": "node_modules/.bin/ngrok tcp 8080"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "xo": {
+    "extends": [
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    }
+  }
 }

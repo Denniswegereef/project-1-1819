@@ -1,0 +1,127 @@
+$outsideLine: 10rem;
+
+.recco {
+  padding-top: 10rem;
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 55rem;
+  margin: 0 auto;
+  position: relative;
+
+  &-header {
+    margin-bottom: 2rem;
+    h3 {
+      font-family: 'Source serif pro', serif;
+      font-size: 2rem;
+      color: #fff;
+    }
+    h4 {
+      font-family: 'Avenir', sans-serif;
+      font-size: 1.25rem;
+      color: #fff;
+    }
+  }
+
+  &-item {
+    padding: 1.5em;
+    &:hover {
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    &:active {
+      background-color: red;
+    }
+  }
+
+  &-books {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4rem;
+    position: relative;
+
+    .active {
+      border: 3px solid white;
+      //background: rgba(255, 255, 255, 0.1);
+    }
+
+    img {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-family: 'Avenir', sans-serif;
+      color: #fff;
+      margin-bottom: 1rem;
+      &:last-of-type {
+        margin-bottom: 2rem;
+      }
+    }
+
+    a {
+      padding: 0.5rem 1rem;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      text-decoration: none;
+      font-size: 1rem;
+      z-index: 5;
+
+      &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-110%);
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        transition: transform 0.3s ease-in-out;
+        opacity: 0.3;
+      }
+
+      &:active {
+        transform: translateY(10%);
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+      }
+
+      &:hover {
+        &:before {
+          transform: translateX(0);
+        }
+      }
+    }
+
+    .line {
+      width: calc(100% + #{$outsideLine} + #{$outsideLine});
+      height: 1px;
+      position: absolute;
+      bottom: 3rem;
+      left: -$outsideLine;
+      background-color: #979797;
+
+      &:before {
+        content: 'Op basis van:';
+        position: absolute;
+        font-family: 'Source serif pro', serif;
+        left: 0;
+        bottom: 0.4rem;
+        color: #fff;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

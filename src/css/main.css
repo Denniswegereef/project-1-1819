@@ -1,0 +1,304 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit; }
+
+body {
+  background-color: grey;
+  font-family: 'Source serif pro', serif; }
+
+h1 {
+  font-size: 10rem; }
+
+@font-face {
+  font-family: 'Source serif pro';
+  src: url(../fonts/Source_Serif_Pro/SourceSerifPro-Bold.ttf) format("ttf");
+  font-weight: 600; }
+
+@font-face {
+  font-family: 'Source serif pro';
+  src: url(../fonts/Source_Serif_Pro/SourceSerifPro-Regular.ttf) format("ttf");
+  font-weight: 200;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Source serif pro';
+  src: url(../fonts/Source_Serif_Pro/SourceSerifPro-Semibold.ttf) format("ttf");
+  font-weight: 400; }
+
+@font-face {
+  font-family: 'Avenir';
+  src: url(../fonts/avenir_ff/AvenirLTStd-Black.ttf) format("ttf");
+  font-weight: 600;
+  font-style: bold; }
+
+@font-face {
+  font-family: 'Avenir';
+  src: url(../fonts/avenir_ff/AvenirLTStd-Regular.ttf) format("ttf");
+  font-weight: 200; }
+
+@font-face {
+  font-family: 'Avenir';
+  src: url(../fonts/avenir_ff/AvenirLTStd-Semibold.ttf) format("ttf");
+  font-weight: 400; }
+
+.header-top {
+  text-align: center;
+  padding-top: 3rem;
+  min-height: 20vh;
+  color: #fff; }
+  .header-top h1 {
+    font-size: 3rem; }
+  .header-top span {
+    display: block;
+    font-size: 3.5rem;
+    font-family: 'Avenir', sans-serif;
+    font-weight: bold; }
+
+.intro {
+  background-color: lightgrey;
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+  .intro-suggestions {
+    position: absolute;
+    top: calc(50% + 1rem);
+    left: calc(50% - 20rem);
+    min-height: 0rem;
+    max-width: 40rem;
+    width: 100%; }
+    .intro-suggestions li {
+      padding: 3px 1rem;
+      background-color: #fff;
+      border-bottom: 1px solid grey;
+      cursor: pointer; }
+      .intro-suggestions li:hover {
+        background-color: grey; }
+    .intro-suggestions h5 {
+      font-size: 1.5rem; }
+
+.hero {
+  display: flex; }
+
+.waves {
+  min-height: 20vh;
+  background-color: red;
+  width: 100%; }
+
+.recco {
+  padding-top: 10rem;
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 55rem;
+  margin: 0 auto;
+  position: relative; }
+  .recco-header {
+    margin-bottom: 2rem; }
+    .recco-header h3 {
+      font-family: 'Source serif pro', serif;
+      font-size: 2rem;
+      color: #fff; }
+    .recco-header h4 {
+      font-family: 'Avenir', sans-serif;
+      font-size: 1.25rem;
+      color: #fff; }
+  .recco-item {
+    padding: 1.5em; }
+    .recco-item:hover {
+      border: 2px solid rgba(255, 255, 255, 0.3); }
+    .recco-item:active {
+      background-color: red; }
+  .recco-books {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4rem;
+    position: relative; }
+    .recco-books .active {
+      border: 3px solid white; }
+    .recco-books img {
+      width: 100%;
+      margin-bottom: 1rem; }
+    .recco-books h3 {
+      font-family: 'Avenir', sans-serif;
+      color: #fff;
+      margin-bottom: 1rem; }
+      .recco-books h3:last-of-type {
+        margin-bottom: 2rem; }
+    .recco-books a {
+      padding: 0.5rem 1rem;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+      text-decoration: none;
+      font-size: 1rem;
+      z-index: 5; }
+      .recco-books a:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-110%);
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        transition: transform 0.3s ease-in-out;
+        opacity: 0.3; }
+      .recco-books a:active {
+        transform: translateY(10%); }
+      .recco-books a:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #fff; }
+      .recco-books a:hover:before {
+        transform: translateX(0); }
+    .recco-books .line {
+      width: calc(100% + 10rem + 10rem);
+      height: 1px;
+      position: absolute;
+      bottom: 3rem;
+      left: -10rem;
+      background-color: #979797; }
+      .recco-books .line:before {
+        content: 'Op basis van:';
+        position: absolute;
+        font-family: 'Source serif pro', serif;
+        left: 0;
+        bottom: 0.4rem;
+        color: #fff;
+        font-size: 1.5rem; }
