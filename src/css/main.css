@@ -131,7 +131,12 @@ html {
 
 body {
   background-color: grey;
-  font-family: 'Source serif pro', serif; }
+  font-family: 'Source serif pro', serif;
+  perspective: 8px;
+  perspective-origin: 50%; }
+
+html {
+  scroll-behavior: smooth; }
 
 h1 {
   font-size: 10rem; }
@@ -168,11 +173,65 @@ h1 {
   src: url(../fonts/avenir_ff/AvenirLTStd-Semibold.ttf) format("ttf");
   font-weight: 400; }
 
+.intro {
+  background-image: linear-gradient(#b7e8eb, #9fe0e4); }
+
+#main {
+  color: black; }
+
+#depth-1 {
+  background-image: linear-gradient(#9fe0e4, #87d9de); }
+
+#depth-2 {
+  background-image: linear-gradient(#87d9de, #6fd1d7); }
+
+#depth-3 {
+  background-image: linear-gradient(#6fd1d7, #57c9d0); }
+
+#depth-4 {
+  background-image: linear-gradient(#57c9d0, #3fc2ca); }
+
+#depth-5 {
+  background-image: linear-gradient(#3fc2ca, #33b0b7); }
+
+#depth-6 {
+  background-image: linear-gradient(#33b0b7, #2c999f); }
+
+#depth-7 {
+  background-image: linear-gradient(#2c999f, #268288); }
+
+#depth-8 {
+  background-image: linear-gradient(#268288, #1f6b70); }
+
+#depth-9 {
+  background-image: linear-gradient(#1f6b70, #185458); }
+
+#depth-10 {
+  background-image: linear-gradient(#185458, #123d40); }
+
+#depth-11 {
+  background-image: linear-gradient(#123d40, #0b2628); }
+
+#depth-12 {
+  background-image: linear-gradient(#0b2628, #040f10); }
+
+#depth-13 {
+  background-image: linear-gradient(#040f10, black); }
+
+#depth-14 {
+  background-image: linear-gradient(black, black); }
+
+#depth-15 {
+  background-image: linear-gradient(black, black); }
+
 .header-top {
   text-align: center;
   padding-top: 3rem;
-  min-height: 20vh;
-  color: #fff; }
+  color: #000;
+  height: 35vh;
+  background: radial-gradient(ellipse at center, #fff 0%, #b7e8eb 100%);
+  overflow: hidden;
+  position: relative; }
   .header-top h1 {
     font-size: 3rem; }
   .header-top span {
@@ -181,48 +240,174 @@ h1 {
     font-family: 'Avenir', sans-serif;
     font-weight: bold; }
 
+.waves {
+  transform: translateZ(3px);
+  width: 300%;
+  height: 10vh;
+  background: url(../img/svg/wave-one.svg);
+  background-repeat: repeat-x;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  animation: wave 25s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  z-index: 10; }
+
+.waves-two {
+  transform: translateZ(1px);
+  width: 300%;
+  height: 10vh;
+  background: url(../img/svg/wave-two.svg);
+  background-repeat: repeat-x;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 0.7; }
+
+@keyframes wave {
+  0% {
+    transform: translateX(0); }
+  50% {
+    transform: translateX(-100vw); }
+  100% {
+    transform: translateX(0); } }
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0); }
+  50% {
+    transform: translate3d(0, 5px, 0); } }
+
+@keyframes animateZ {
+  from {
+    transform: translateZ(0px); }
+  to {
+    transform: translateZ(4px); } }
+
 .intro {
-  background-color: lightgrey;
-  min-height: 60vh;
+  min-height: 65vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  position: relative; }
+  position: relative;
+  flex-direction: column;
+  padding-top: 10rem; }
+  .intro h1 {
+    font-size: 2rem;
+    margin-bottom: 3rem; }
+  .intro input {
+    background-color: #fffdb4;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    border: none;
+    color: #58625f;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
   .intro-suggestions {
-    position: absolute;
-    top: calc(50% + 1rem);
-    left: calc(50% - 20rem);
-    min-height: 0rem;
-    max-width: 40rem;
-    width: 100%; }
+    max-width: 30rem;
+    width: 100%;
+    margin-top: 1rem; }
     .intro-suggestions li {
-      padding: 3px 1rem;
+      font-size: 1.1rem;
+      border-radius: 0.2px;
+      padding: 10px 1rem;
+      margin-bottom: 2px;
       background-color: #fff;
       border-bottom: 1px solid grey;
       cursor: pointer; }
+      .intro-suggestions li span {
+        color: #737373; }
       .intro-suggestions li:hover {
-        background-color: grey; }
-    .intro-suggestions h5 {
-      font-size: 1.5rem; }
+        background-color: #fffdb4; }
+  .intro .loader {
+    transition: all 0.3s;
+    padding: 20px 2.5rem;
+    position: relative;
+    background-color: #fffdb4; }
+    .intro .loader:before {
+      content: '';
+      position: absolute;
+      top: calc(50% - 10px);
+      left: 10px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 4px solid #fffdb4;
+      border-top-color: #000;
+      animation: spinner 0.6s linear infinite; }
 
 .hero {
-  display: flex; }
+  display: flex;
+  max-width: 40rem; }
+  .hero .content {
+    background-color: #fffdb4;
+    border-radius: 0 2rem 2rem 0;
+    padding: 2.5rem 1rem 2.5rem 1rem; }
+  .hero button {
+    background-color: #b7e8eb;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    border: 3px solid black;
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    min-width: 40px;
+    position: absolute;
+    left: calc(50% - 20px);
+    bottom: 10%;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer; }
+    .hero button:hover {
+      background-color: #fffdb4;
+      color: #000;
+      transform: scale(1.1); }
+  .hero .loading-spinner {
+    background-color: #fffdb4; }
+  .hero h2 {
+    font-family: 'Avenir', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1rem; }
+  .hero h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem; }
+  .hero p {
+    line-height: 1.4rem; }
 
-.waves {
-  min-height: 20vh;
-  background-color: red;
-  width: 100%; }
+@keyframes spinner {
+  to {
+    transform: rotate(360deg); } }
+
+#hero:before {
+  content: '';
+  position: absolute;
+  height: 30vh;
+  width: 20vw;
+  background-image: url(../img/svg/fish-one.svg);
+  background-repeat: no-repeat;
+  bottom: 50%;
+  left: 0; }
 
 .recco {
-  padding-top: 10rem;
   height: 90vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;
-  max-width: 55rem;
-  margin: 0 auto;
   position: relative; }
+  .recco button {
+    background-color: #b7e8eb;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    border: 3px solid black;
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    min-width: 40px;
+    bottom: 10%;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer; }
   .recco-header {
     margin-bottom: 2rem; }
     .recco-header h3 {

@@ -7,3 +7,5 @@ let search = document.getElementById('searchInput')
 search.addEventListener('input', e => {
   autocomplete(search.value)
 })
+
+location.hash = '#'

@@ -1,42 +1,125 @@
-$autobox: 40rem;
+$autobox: 30rem;
 
 .intro {
-  background-color: lightgrey;
-  min-height: 60vh;
+  min-height: 65vh;
   display: flex;
-  justify-content: center;
   align-items: center;
   position: relative;
+  flex-direction: column;
+  padding-top: 10rem;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  input {
+    background-color: $supportColor;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    border: none;
+    color: #58625f;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  }
 
   &-suggestions {
-    position: absolute;
-    top: calc(50% + 1rem);
-    left: calc(50% - #{$autobox / 2});
-    min-height: 0rem;
     max-width: $autobox;
     width: 100%;
+    margin-top: 1rem;
     li {
-      padding: 3px 1rem;
+      font-size: 1.1rem;
+      border-radius: 0.2px;
+      padding: 10px 1rem;
+      margin-bottom: 2px;
       background-color: #fff;
       border-bottom: 1px solid grey;
       cursor: pointer;
+      span {
+        color: #737373;
+      }
       &:hover {
-        background-color: grey;
+        background-color: $supportColor;
       }
     }
+  }
 
-    h5 {
-      font-size: 1.5rem;
+  .loader {
+    transition: all 0.3s;
+    padding: 20px 2.5rem;
+    position: relative;
+    background-color: $supportColor;
+    &:before {
+      content: '';
+      position: absolute;
+      top: calc(50% - 10px);
+      left: 10px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 4px solid $supportColor;
+      border-top-color: #000;
+      animation: spinner 0.6s linear infinite;
     }
   }
 }
 
 .hero {
   display: flex;
+  max-width: 40rem;
+
+  .content {
+    background-color: $supportColor;
+    border-radius: 0 2rem 2rem 0;
+    padding: 2.5rem 1rem 2.5rem 1rem;
+  }
+
+  button {
+    background-color: $baseColor;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+    border: 3px solid black;
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    min-width: 40px;
+    position: absolute;
+    left: calc(50% - 20px);
+    bottom: 10%;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $supportColor;
+      color: #000;
+      transform: scale(1.1);
+    }
+  }
+
+  .loading-spinner {
+    background-color: $supportColor;
+  }
+
+  h2 {
+    font-family: 'Avenir', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    line-height: 1.4rem;
+  }
 }
 
-.waves {
-  min-height: 20vh;
-  background-color: red;
-  width: 100%;
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
 }

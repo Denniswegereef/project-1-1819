@@ -1,6 +1,12 @@
 body {
   background-color: grey;
   font-family: 'Source serif pro', serif;
+  perspective: 8px;
+  perspective-origin: 50%;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 h1 {

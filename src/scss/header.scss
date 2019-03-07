@@ -1,8 +1,12 @@
 .header-top {
   text-align: center;
   padding-top: 3rem;
-  min-height: 20vh;
-  color: #fff;
+  color: #000;
+  height: 35vh;
+  background: radial-gradient(ellipse at center, #fff 0%, #b7e8eb 100%);
+  overflow: hidden;
+  position: relative;
+
   h1 {
     font-size: 3rem;
   }
@@ -12,5 +16,63 @@
     font-size: 3.5rem;
     font-family: 'Avenir', sans-serif;
     font-weight: bold;
+  }
+}
+
+.waves {
+  transform: translateZ(3px);
+  width: 300%;
+  height: 10vh;
+  background: url(../img/svg/wave-one.svg);
+  background-repeat: repeat-x;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  animation: wave 25s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  z-index: 10;
+}
+
+.waves-two {
+  transform: translateZ(1px);
+  width: 300%;
+  height: 10vh;
+  background: url(../img/svg/wave-two.svg);
+  background-repeat: repeat-x;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite,
+    swell 7s ease -1.25s infinite;
+  opacity: 0.7;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+
+@keyframes animateZ {
+  from {
+    transform: translateZ(0px);
+  }
+  to {
+    transform: translateZ(4px);
   }
 }

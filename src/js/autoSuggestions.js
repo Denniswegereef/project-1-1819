@@ -39,14 +39,14 @@ async function autocomplete(value) {
 }
 
 function createMarkUp(title, data) {
-  //console.log(data)
-  return `<li><h5>${title}</h5>
+  console.log(data)
+  return `
   </li>${data
     .map(
       item =>
         `<li class='auto-suggestions-item' data-frabl='${item.frabl}'>${
           item.title
-        }</li>`
+        }<span> - ${item['author_main']}</span></li>`
     )
     .join('')}`
 }
@@ -71,6 +71,8 @@ function handleEvents() {
 }
 
 async function getItem() {
+  console.log(this)
+  this.classList.add('loader')
   await getBook(this.dataset.frabl)
 }
 

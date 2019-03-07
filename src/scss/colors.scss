@@ -1,0 +1,24 @@
+$supportColor: #fffdb4;
+
+$baseColor: #b7e8eb;
+$amount: 15;
+$darkenSteps: 6;
+.intro {
+  background-image: linear-gradient(
+    $baseColor,
+    darken($baseColor, $darkenSteps)
+  );
+}
+
+#main {
+  color: black;
+}
+
+@for $i from 1 through $amount {
+  #depth-#{$i} {
+    background-image: linear-gradient(
+      darken($baseColor, $i * $darkenSteps),
+      darken($baseColor, ($i + 1) * $darkenSteps)
+    );
+  }
+}
