@@ -115,8 +115,8 @@ async function createNewDepth(e, lastbook) {
   const markupnew = `
   <section class="recco" id="depth-${currentDepth}">
     <header class="recco-header">
-      <h3>Drie aansluitende items</h3>
-      <h4>Kies een item om verder te duiken</h4>
+      <h3>Drie aansluitende boeken</h3>
+      <h4>Bekijk een boek of duik dieper</h4>
     </header>
 
     <div class="recco-books">
