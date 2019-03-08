@@ -58,21 +58,24 @@ async function createNewDepth(e, lastbook) {
   const dataOne = await dynamicBook(keyOne)
 
   cleanOne = await cleanBook(
-    dataOne[0][Math.floor(Math.random() * dataOne[0].length) + 1]
+    dataOne[0][Math.floor(Math.random() * dataOne[0].length) + 1],
+    currentBook
   )
 
   const keyTwo = findRandomKey(currentBook.possibleKeys())
   const dataTwo = await dynamicBook(keyTwo)
 
   cleanTwo = await cleanBook(
-    dataTwo[0][Math.floor(Math.random() * dataTwo[0].length) + 1]
+    dataTwo[0][Math.floor(Math.random() * dataTwo[0].length) + 1],
+    currentBook
   )
 
   const keyThree = findRandomKey(currentBook.possibleKeys())
   const dataThree = await dynamicBook(keyThree)
 
   cleanThree = await cleanBook(
-    dataThree[0][Math.floor(Math.random() * dataThree[0].length) + 1]
+    dataThree[0][Math.floor(Math.random() * dataThree[0].length) + 1],
+    currentBook
   )
 
   //let stream = [cleanBook(dataOne), cleanBook(dataTwo), cleanBook(dataThree)]
@@ -81,17 +84,22 @@ async function createNewDepth(e, lastbook) {
 
   let items = [cleanOne, cleanTwo, cleanThree]
     .map((item, index) => {
-      console.log(index)
+      console.log(item)
       return `
       <article class="recco-item">
         <img src="https://v19.nbc.bibliotheek.nl/thumbnail?uri=http://data.bibliotheek.nl/ggc/ppn/${
           item.imageURL
         }&token=c1322402" alt=""/>
+
+        <h2>${item.title}</h2>
+
         ${index === 0 ? `<h3>${keyOne}</h3>` : ''}
         ${index === 1 ? `<h3>${keyTwo}</h3>` : ''}
         ${index === 2 ? `<h3>${keyThree}</h3>` : ''}
 
-        <button class="clickbutton">Kies boek</button>
+        <a class="clickbutton" href="${
+          item.detailPage
+        }" target="_blank">Bekijk boek</a>
       </article>
       `
     })

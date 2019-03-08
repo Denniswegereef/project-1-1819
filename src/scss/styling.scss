@@ -1,12 +1,93 @@
-#hero {
+#main {
+  overflow: hidden;
   &:before {
     content: '';
     position: absolute;
-    height: 30vh;
-    width: 20vw;
+    height: 25rem;
+    width: 35rem;
+    background-image: url(../img/svg/coral.svg);
+    background-repeat: no-repeat;
+    bottom: 12%;
+    left: -9rem;
+    z-index: 10;
+    transform: rotate(28deg);
+  }
+}
+#hero,
+#depth-2,
+#depth-4 {
+  &:before {
+    content: '';
+    position: absolute;
+    height: 5rem;
+    width: 5rem;
     background-image: url(../img/svg/fish-one.svg);
     background-repeat: no-repeat;
     bottom: 50%;
     left: 0;
+    animation: swim 60s infinite;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    height: 5rem;
+    width: 5rem;
+    background-image: url(../img/svg/fish-three.svg);
+    background-repeat: no-repeat;
+    bottom: 20%;
+    left: -20%;
+    animation: swim 80s infinite;
+    animation-delay: 5s;
+  }
+}
+
+@keyframes swim {
+  0% {
+    left: -30%;
+    transform: translate(0, -20px);
+  }
+  10% {
+    left: 20%;
+    transform: translate(0, -20px);
+  }
+  20% {
+    left: 40%;
+    transform: translate(0, 20px);
+  }
+  30% {
+    left: 60%;
+    transform: translate(0, -20px);
+  }
+  40% {
+    left: 80%;
+    transform: translate(0, 20px);
+  }
+  45% {
+    left: 100%;
+    transform: translate(0, -20px);
+  }
+  50% {
+    left: 130%;
+    transform: translate(0, 20px) scaleX(-1);
+  }
+  60% {
+    left: 90%;
+    transform: translate(0, -20px) scaleX(-1);
+  }
+  70% {
+    left: 60%;
+    transform: translate(0, 10px) scaleX(-1);
+  }
+  80% {
+    left: 20%;
+    transform: translate(0, -50px) scaleX(-1);
+  }
+  90% {
+    left: -10%;
+    transform: translate(0, 50px) scaleX(-1);
+  }
+  100% {
+    left: -30%;
+    transform: translate(0, 0) scaleX(1);
   }
 }

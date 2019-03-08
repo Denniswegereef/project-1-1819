@@ -141,6 +141,14 @@ html {
 h1 {
   font-size: 10rem; }
 
+#bgCanvas {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  position: absolute; }
+
 @font-face {
   font-family: 'Source serif pro';
   src: url(../fonts/Source_Serif_Pro/SourceSerifPro-Bold.ttf) format("ttf");
@@ -174,55 +182,22 @@ h1 {
   font-weight: 400; }
 
 .intro {
-  background-image: linear-gradient(#b7e8eb, #9fe0e4); }
+  background-image: linear-gradient(#b7e8eb, #67cfd5); }
 
 #main {
   color: black; }
 
 #depth-1 {
-  background-image: linear-gradient(#9fe0e4, #87d9de); }
+  background-image: linear-gradient(#67cfd5, #2fa1a7); }
 
 #depth-2 {
-  background-image: linear-gradient(#87d9de, #6fd1d7); }
+  background-image: linear-gradient(#2fa1a7, #185458); }
 
 #depth-3 {
-  background-image: linear-gradient(#6fd1d7, #57c9d0); }
+  background-image: linear-gradient(#185458, #020808); }
 
 #depth-4 {
-  background-image: linear-gradient(#57c9d0, #3fc2ca); }
-
-#depth-5 {
-  background-image: linear-gradient(#3fc2ca, #33b0b7); }
-
-#depth-6 {
-  background-image: linear-gradient(#33b0b7, #2c999f); }
-
-#depth-7 {
-  background-image: linear-gradient(#2c999f, #268288); }
-
-#depth-8 {
-  background-image: linear-gradient(#268288, #1f6b70); }
-
-#depth-9 {
-  background-image: linear-gradient(#1f6b70, #185458); }
-
-#depth-10 {
-  background-image: linear-gradient(#185458, #123d40); }
-
-#depth-11 {
-  background-image: linear-gradient(#123d40, #0b2628); }
-
-#depth-12 {
-  background-image: linear-gradient(#0b2628, #040f10); }
-
-#depth-13 {
-  background-image: linear-gradient(#040f10, black); }
-
-#depth-14 {
-  background-image: linear-gradient(black, black); }
-
-#depth-15 {
-  background-image: linear-gradient(black, black); }
+  background-image: linear-gradient(#020808, black); }
 
 .header-top {
   text-align: center;
@@ -294,7 +269,8 @@ h1 {
   padding-top: 10rem; }
   .intro h1 {
     font-size: 2rem;
-    margin-bottom: 3rem; }
+    margin-bottom: 3rem;
+    color: #29696d; }
   .intro input {
     background-color: #fffdb4;
     padding: 1rem 2rem;
@@ -379,23 +355,94 @@ h1 {
   to {
     transform: rotate(360deg); } }
 
-#hero:before {
+#main {
+  overflow: hidden; }
+  #main:before {
+    content: '';
+    position: absolute;
+    height: 25rem;
+    width: 35rem;
+    background-image: url(../img/svg/coral.svg);
+    background-repeat: no-repeat;
+    bottom: 12%;
+    left: -9rem;
+    z-index: 10;
+    transform: rotate(28deg); }
+
+#hero:before,
+#depth-2:before,
+#depth-4:before {
   content: '';
   position: absolute;
-  height: 30vh;
-  width: 20vw;
+  height: 5rem;
+  width: 5rem;
   background-image: url(../img/svg/fish-one.svg);
   background-repeat: no-repeat;
   bottom: 50%;
-  left: 0; }
+  left: 0;
+  animation: swim 60s infinite; }
+
+#hero:after,
+#depth-2:after,
+#depth-4:after {
+  content: '';
+  position: absolute;
+  height: 5rem;
+  width: 5rem;
+  background-image: url(../img/svg/fish-three.svg);
+  background-repeat: no-repeat;
+  bottom: 20%;
+  left: -20%;
+  animation: swim 80s infinite;
+  animation-delay: 5s; }
+
+@keyframes swim {
+  0% {
+    left: -30%;
+    transform: translate(0, -20px); }
+  10% {
+    left: 20%;
+    transform: translate(0, -20px); }
+  20% {
+    left: 40%;
+    transform: translate(0, 20px); }
+  30% {
+    left: 60%;
+    transform: translate(0, -20px); }
+  40% {
+    left: 80%;
+    transform: translate(0, 20px); }
+  45% {
+    left: 100%;
+    transform: translate(0, -20px); }
+  50% {
+    left: 130%;
+    transform: translate(0, 20px) scaleX(-1); }
+  60% {
+    left: 90%;
+    transform: translate(0, -20px) scaleX(-1); }
+  70% {
+    left: 60%;
+    transform: translate(0, 10px) scaleX(-1); }
+  80% {
+    left: 20%;
+    transform: translate(0, -50px) scaleX(-1); }
+  90% {
+    left: -10%;
+    transform: translate(0, 50px) scaleX(-1); }
+  100% {
+    left: -30%;
+    transform: translate(0, 0) scaleX(1); } }
 
 .recco {
-  height: 90vh;
+  height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;
-  position: relative; }
+  position: relative;
+  align-items: center;
+  padding-top: 3rem; }
   .recco button {
     background-color: #b7e8eb;
     padding: 0.5rem 1rem;
@@ -408,7 +455,12 @@ h1 {
     bottom: 10%;
     transition: all 0.2s ease-in-out;
     cursor: pointer; }
+    .recco button:last-of-type {
+      grid-area: 2 / 2; }
+      .recco button:last-of-type:hover {
+        transform: translateY(-5px); }
   .recco-header {
+    max-width: 40rem;
     margin-bottom: 2rem; }
     .recco-header h3 {
       font-family: 'Source serif pro', serif;
@@ -419,59 +471,57 @@ h1 {
       font-size: 1.25rem;
       color: #fff; }
   .recco-item {
-    padding: 1.5em; }
+    transition: all 0.3s ease-in-out;
+    padding: 1rem 1rem 3rem 1rem; }
     .recco-item:hover {
-      border: 2px solid rgba(255, 255, 255, 0.3); }
-    .recco-item:active {
-      background-color: red; }
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-3px); }
   .recco-books {
+    max-width: 55rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 4rem;
+    grid-gap: 3rem;
     position: relative; }
     .recco-books .active {
       border: 3px solid white; }
     .recco-books img {
       width: 100%;
       margin-bottom: 1rem; }
+    .recco-books h2 {
+      font-family: 'Avenir', sans-serif;
+      font-size: 1.5rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      padding-bottom: 1rem; }
     .recco-books h3 {
       font-family: 'Avenir', sans-serif;
       color: #fff;
-      margin-bottom: 1rem; }
+      margin-bottom: 4rem;
+      font-size: 1.3rem;
+      position: relative; }
+      .recco-books h3:before {
+        display: block;
+        content: 'Op basis van:';
+        font-size: 0.9rem;
+        padding-bottom: 0.5rem; }
       .recco-books h3:last-of-type {
         margin-bottom: 2rem; }
     .recco-books a {
+      background-color: #b7e8eb;
       padding: 0.5rem 1rem;
-      color: #fff;
-      position: relative;
-      overflow: hidden;
-      display: inline-block;
-      text-decoration: none;
+      border-radius: 0.2rem;
+      border: 3px solid black;
+      margin-top: 1rem;
       font-size: 1rem;
-      z-index: 5; }
-      .recco-books a:before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        transform: translateX(-110%);
-        width: 100%;
-        height: 100%;
-        background-color: #fff;
-        transition: transform 0.3s ease-in-out;
-        opacity: 0.3; }
-      .recco-books a:active {
-        transform: translateY(10%); }
-      .recco-books a:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #fff; }
-      .recco-books a:hover:before {
-        transform: translateX(0); }
+      min-width: 40px;
+      bottom: 10%;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      color: #000;
+      text-decoration: none;
+      font-family: 'Avenir', sans-serif; }
+      .recco-books a:hover {
+        transform: translateY(-5px); }
     .recco-books .line {
       width: calc(100% + 10rem + 10rem);
       height: 1px;
