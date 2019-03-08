@@ -1,4 +1,4 @@
-import { API } from './vendor/OBA-wrapper/js/index.js'
+import { API } from './vendor/js/index.js'
 import { render } from './hero.js'
 
 const api = new API({
