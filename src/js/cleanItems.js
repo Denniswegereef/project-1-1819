@@ -32,7 +32,10 @@ const cleanBook = async (book, currentBook) => {
       book.summaries && book.summaries.summary && book.summaries.summary._text
         ? book.summaries.summary._text
         : 'no summary available',
-    detailPage: book['detail-page']._text,
+    detailPage:
+      book['detail-page'] && book['detail-page']._text
+        ? book['detail-page']._text
+        : 'http://denniswegereef.nl',
     frabl: book.frabl._text,
     imageURL:
       book.identifiers &&

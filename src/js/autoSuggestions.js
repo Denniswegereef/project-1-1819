@@ -13,15 +13,20 @@ async function getAutoComplete(url) {
     })
     .then(res => {
       data = res
-      let dataTitles = JSON.parse(data).titles
-
-      let matchingData = data.match(/"frabl":\s*\[?(\d+)\]?/g)
+      return JSON.parse(data).titles
+      console.log(dataTitles[0].frabl)
+      let matchingData = data.match(/"frabl":\s*\[?\s*(\d+)\s*\]?/g)
+      console.log(matchingData)
       let firstNumbers = matchingData.map(item => item.match(/\d+/)[0])
 
       return dataTitles.map((item, index) => {
         item.frabl = firstNumbers[index]
         return item
       })
+    })
+    .then(res => {
+      console.log(res)
+      return res
     })
     .catch(e => e)
 }
@@ -34,12 +39,11 @@ async function autocomplete(value) {
   let data = await getAutoComplete(
     `https://autocomplete.aquabrowser.com/v1/oba/search?q=${value}&alpha=0.8&hl=true&p=oba`
   )
-
+  console.log(data)
   renderData(data)
 }
 
 function createMarkUp(title, data) {
-  console.log(data)
   return `
   </li>${data
     .map(
@@ -57,7 +61,6 @@ function renderData(data, handle) {
   if (handle === 'clear') {
     return
   }
-
   autoSuggestionsBox.innerHTML = createMarkUp('Titles', data)
   handleEvents()
 }
